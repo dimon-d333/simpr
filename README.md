@@ -8,7 +8,7 @@
 
 1NN:
 
-![1NN](photo/1NN.png)
+![1NN](photo/1NNedit.png)
 
 **Алгорим k ближайших соседей**
 
@@ -44,7 +44,7 @@ kNN <- function(xl, z, k) {
 
 6NN:
 
-![1NN](photo/6NN.png)
+![1NN](photo/6NNedit.png)
 
 **Метод взвешенных ближайших соседей.**
 
