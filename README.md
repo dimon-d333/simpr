@@ -8,7 +8,7 @@
 
 Алгорим k ближайших соседей - kNN относит объект u к тому классу, элементов которого ббольше среди k ближайших соседей:
 
-Код KNN:
+Код kNN:
 ```R
 kNN <- function(xl, z, k) {
   orderedXl <- sortObjectsByDist(xl, z)
@@ -38,5 +38,28 @@ kNN <- function(xl, z, k) {
 
 ![1NN](photo/6NN.png)
 
+Метод взвешенных ближайших соседей.
+
+В задачах с числом классов 3 и более нечётность уже не помогает, и ситуации неоднозначности всё равно могут возникать. Тогда i-му соседу приписывается вес wi, как правило, убывающий с ростом ранга соседа i. Объект относится к тому классу, который набирает больший суммарный вес среди k ближайших соседей.
+
+Код kWNN:
+```R
+weight <- function(i, k) {
+  return((k + 1 - i) / k)
+}
+
+kWNN <- function(xl, z, k) {
+  orderedXl <- sortObjectsByDist(xl, z)
+  n <- dim(orderedXl)[2] - 1
+  weights <- rep(0,3)
+  names(weights) <- c("setosa", "versicolor", "virginica")
+  classes <- orderedXl[1:k, n + 1]
+  for(i in 1:k) {
+    weights[classes[i]] <- weight(i,k) + weights[classes[i]];
+  }
+  class <- names(which.max(weights))
+  return(class)
+}
+```
 
 
