@@ -1,5 +1,17 @@
 Метод ближайших соседей — простейший метрический классификатор, основанный на оценивании сходства объектов. Классифицируемый объект относится к тому классу, которому принадлежат ближайшие к нему объекты обучающей выборки.
 
+Код KNN:
+```R
+kNN <- function(xl, z, k) {
+  orderedXl <- sortObjectsByDist(xl, z)
+  n <- dim(orderedXl)[2] - 1
+  classes <- orderedXl[1:k, n + 1]
+  counts <- table(classes)
+  class <- names(which.max(counts))
+  return (class)
+}
+```
+
 ![1](photo/1.png)
 
 1NN:
