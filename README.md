@@ -78,4 +78,10 @@ kWNN <- function(xl, z, k, q) {
 
 ![1NN](photo/6WNN.png)
 
+**Преимущества kWNN над KNN:**
+
+![1NN](photo/KNN.png)
+
+![1NN](photo/kWNN.png)
+
 
