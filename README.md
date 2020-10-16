@@ -54,28 +54,28 @@ kNN <- function(xl, z, k) {
 
 Код kWNN:
 ```R
-weight <- function(i, k) {
-  return((k + 1 - i) / k)
+weight <- function(i, k, q) {
+  return (q ^ i)
 }
 
-kWNN <- function(xl, z, k) {
+kWNN <- function(xl, z, k, q) {
   orderedXl <- sortObjectsByDist(xl, z)
   n <- dim(orderedXl)[2] - 1
   weights <- rep(0,3)
   names(weights) <- c("setosa", "versicolor", "virginica")
   classes <- orderedXl[1:k, n + 1]
   for(i in 1:k) {
-    weights[classes[i]] <- weight(i,k) + weights[classes[i]];
+    weights[classes[i]] <- weight(i,k,q) + weights[classes[i]];
   }
   class <- names(which.max(weights))
   return(class)
 }
 ```
 
-После завершения алгоритма LOO, получаем оптимальное k = 4.
+После завершения алгоритма LOO, получаем оптимальное k = 6, q = 0.56.
 
 Карта классификации для 4WNN:
 
-![1NN](photo/4WNN.png)
+![1NN](photo/6WNN.png)
 
 
