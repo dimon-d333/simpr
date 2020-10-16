@@ -80,7 +80,43 @@ kWNN <- function(xl, z, k, q) {
 
 **Преимущества kWNN над KNN:**
 
+Рассмотрим следующую выборку:
+
+Код kWNN:
+```R
+colors <- c("class-1" = "red", "class-2" = "green3", "class-3" = "blue")
+
+df = data.frame(x = double(), y = double(), class = character())
+
+df <- rbind(df, data.frame(x = 1, y = 0.1, class = "class-1"))
+df <- rbind(df, data.frame(x = 1.15, y = 0.15, class = "class-1"))
+df <- rbind(df, data.frame(x = 1.1, y = 0.1, class = "class-1"))
+df <- rbind(df, data.frame(x = 1.5, y = 0.2, class = "class-2"))
+df <- rbind(df, data.frame(x = 1.35, y = 0.2, class = "class-2"))
+df <- rbind(df, data.frame(x = 1.3, y = 0.25, class = "class-2"))
+df <- rbind(df, data.frame(x = 1.5, y = 0.25, class = "class-2"))
+df <- rbind(df, data.frame(x = 1.35, y = 0.3, class = "class-2"))
+df <- rbind(df, data.frame(x = 1.4, y = 0.25, class = "class-2"))
+df <- rbind(df, data.frame(x = 1.4, y = 0.25, class = "class-2"))
+df <- rbind(df, data.frame(x = 3, y = 0.85, class = "class-3"))
+df <- rbind(df, data.frame(x = 3.2, y = 0.9, class = "class-3"))
+df <- rbind(df, data.frame(x = 3.25, y = 1, class = "class-3"))
+df <- rbind(df, data.frame(x = 3.1, y = 0.8, class = "class-3"))
+df <- rbind(df, data.frame(x = 3.15, y = 0.85, class = "class-3"))
+plot(df[c("x", "y")], pch = 19, col = colors[df$class])
+
+z <- c(1.2, 0.15)
+#class <- kNN(df, z, k=7)
+class <- kWNN(df, z, k=7, q=0.56)
+print(class)
+points(z[1], z[2], pch = 22, bg = colors[class], asp = 1)
+
+```
+Результат работы KNN:
+
 ![1NN](photo/KNN.png)
+
+Результат работы KWNN:
 
 ![1NN](photo/kWNN.png)
 
