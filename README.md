@@ -156,7 +156,7 @@ points(z[1], z[2], pch = 22, bg = colors[class], asp = 1)
 
 **Квартическое:**
 
-![1](photo/2.quad.PNG)
+![1](photo/2.quar.PNG)
 
 **Гауссовское:**
 
