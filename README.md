@@ -240,3 +240,57 @@ parsen <- function(x, z, h, F) {
 
 5. Вернуть значения <img src="photo/3.7.png">
 
+Код:
+```R
+potentialF <- function(x, z, g, F, h=c()) {
+    m <- dim(x)[1]
+    n <- dim(x)[2]-1
+    if(sum(h) == 0) h <- c(rep(1, m/3), rep(0.25,(m - m / 3)))
+    classes <- rep(0, length(names(table(x[,n+1]))))
+    names(classes) <- names(table(x[,n+1]))
+    for(i in 1:m) {
+        y <- x[i, n+1]
+        dist <- Distanse(x[i,1:n],z)
+        w <- F(dist/h[i]) * g[i]
+        classes[y] <- classes[y] + w
+    }
+    if(sum(classes) > 0) {
+        class <- names(which.max(classes))
+    } else {
+        class <- "unknown"
+    }
+    return(class)
+}
+```
+
+**Прямоугольное:**
+
+<img src="photo/3.12.png">
+
+**Треугольное:**
+
+<img src="photo/3.13.png">
+
+**Епанечникова:**
+
+<img src="photo/3.15.png">
+
+**Квартическое:**
+
+<img src="photo/3.14.png">
+
+Преимущества метода потенциальных функций:
+
+1) Метод прост для понимания и алгоритмической реализации;
+
+2) Порождает потоковый алгоритм;
+
+3) Хранит лишь часть выборки, следовательно, экономит память.
+
+Недостатки метода:
+
+1) Порождаемый алгоритм медленно сходится;
+
+2) Параметры <img src="photo/3.8.png"> и <img src="photo/3.9.png"> настраиваются слишком грубо;
+
+3) Значения параметров <img src="photo/3.10.png"> зависят от порядка выбора объектов из выборки <img src="photo/3.11.png">.
