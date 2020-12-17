@@ -238,5 +238,5 @@ parsen <- function(x, z, h, F) {
 
 4.  Если <img src="photo/3.5.png">, то <img src="photo/3.6.png">
 
-5. Вернуть значения <img src="photo/3.6.png">
+5. Вернуть значения <img src="photo/3.7.png">
 
