@@ -192,25 +192,33 @@ parsen <- function(x, z, h, F) {
 
 Оптимальная ширина окна h = 0.35, оценка LOO = 0.04
 
-![1](photo/2.rect.PNG)
+<img src="photo/2.rectLOO.PNG">
+
+<img src="photo/2.rect.PNG">
 
 **Треугольное:**
 
 Оптимальная ширина окна h = 0.35, оценка LOO = 0.04
 
-![1](photo/2.tria.PNG)
+<img src="photo/2.triaLOO.PNG">
+
+<img src="photo/2.tria.PNG">
 
 **Епанечникова:**
 
 Оптимальная ширина окна h = 0.35, оценка LOO = 0.04
 
-![1](photo/2.epan.PNG)
+<img src="photo/2.epanLOO.PNG">
+
+<img src="photo/2.epan.PNG">
 
 **Квартическое:**
 
 Оптимальная ширина окна h = 0.35, оценка LOO = 0.04
 
-![1](photo/2.quar.PNG)
+<img src="photo/2.quarLOO.PNG">
+
+<img src="photo/2.quar.PNG">
 
 **Гауссовское:**
 
