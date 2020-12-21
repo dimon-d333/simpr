@@ -392,7 +392,7 @@ potentialF <- function(x, z, g, F, h=c()) {
 
 <img src="photo/6.6.png">
 
-<img src="photo/6.7.png">
+<img src="photo/6.8.png">
 
 Преимущества:
 1) Простота реализации.
